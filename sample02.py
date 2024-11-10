@@ -38,7 +38,8 @@ def main():
     # Command interface
     while True:
         print("\n[A]dd / [C]redits / [D]elete / [P]rint all / p[R]int department / [Q]uit")
-        command = input("Enter command: ").strip().lower()
+        command = input("Enter command: ").strip()
+        command = command[0].lower() + command[1:]
 
         if command == 'p':
             print_all_courses(courses)
@@ -48,13 +49,14 @@ def main():
         elif command == 'c':
             department_name = input("Enter department name: ").strip()
             print_department_credits(courses, department_name)
-        elif command.startswith('a'):
-            user_input = input("Enter course in format 'a <department> <course name> <credits>': ")
-            user_input = user_input[2:]  
+        elif command.startswith('a '):
+            # Remove the initial 'a ' to pass the rest of the command to add_course
+            user_input = command[2:].strip()  # This removes the "a " prefix
             add_course(courses, user_input)
         elif command.startswith('d'):
-            user_input = input("Enter deletion in format 'd <department>' or 'd <department> <course name>': ")
-            user_input = user_input[2:]  
+            #input("Enter deletion in format 'd <department>' or 'd <department> <course name>': ")
+            # Remove the initial 'd ' to pass the rest of the command to add_course
+            user_input = command[2:].strip()  # This removes the "d " prefix
             delete_course_or_department(courses, user_input)            
         elif command == 'q':
             print("Quitting the program.")
