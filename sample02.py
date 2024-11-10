@@ -71,7 +71,7 @@ def print_all_courses(courses):
         print(f"*{department}")
         # Sort courses within each department alphabetically
         for course_name, credit_points in sorted(courses[department]):
-            print(f"  {course_name} : {credit_points} cr")
+            print(f"{course_name} : {credit_points} cr")
 def print_department_courses(courses, department_name):
     # Check if department exists
     if department_name not in courses:
@@ -79,9 +79,9 @@ def print_department_courses(courses, department_name):
         return
 
     # Print department courses in alphabetical order
-    print(f"*{department_name}*")
+    print(f"*{department_name}")
     for course_name, credit_points in sorted(courses[department_name]):
-        print(f"  {course_name} : {credit_points} cr")
+        print(f"{course_name} : {credit_points} cr")
 
 def print_department_credits(courses, department_name):
     # Check if department exists
