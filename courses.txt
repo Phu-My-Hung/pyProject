@@ -7,3 +7,4 @@ Tietotekniikka; 1;5
 IT;C++;2
 IT;Python 2;5
 it;python 3;5
+it;oh haha;3
