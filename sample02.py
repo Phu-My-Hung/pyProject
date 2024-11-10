@@ -55,7 +55,7 @@ def main():
             add_course(courses, user_input)
         elif command.startswith('d'):
             #input("Enter deletion in format 'd <department>' or 'd <department> <course name>': ")
-            # Remove the initial 'd ' to pass the rest of the command to add_course
+            # Remove the initial 'd ' to pass the rest of the command to delete_course_or_department
             user_input = command[2:].strip()  # This removes the "d " prefix
             delete_course_or_department(courses, user_input)            
         elif command == 'q':
