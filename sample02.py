@@ -43,11 +43,11 @@ def main():
 
         if command == 'p':
             print_all_courses(courses)
-        elif command == 'r':
-            department_name = input("Enter department name: ").strip()
+        elif command.startswith('r '):
+            department_name = command[2:].strip()
             print_department_courses(courses, department_name)
-        elif command == 'c':
-            department_name = input("Enter department name: ").strip()
+        elif command.startswith('c '):
+            department_name = command[2:].strip()
             print_department_credits(courses, department_name)
         elif command.startswith('a '):
             # Remove the initial 'a ' to pass the rest of the command to add_course
